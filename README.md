@@ -62,7 +62,8 @@ The canvas background is cleared, and translations are applied.
 Unit vector i (î) is drawn in red, and unit vector j (ĵ) is drawn in green.
 The vectors are labeled with "î" and "ĵ" respectively.
 
-/*sketch.preload = () => {
+```
+sketch.preload = () => {
     // Set canvas dimensions and center
     sketch.canvasWidth = 550;
     sketch.canvasHeigth = 570;
@@ -71,7 +72,9 @@ The vectors are labeled with "î" and "ĵ" respectively.
     normalFont = sketch.loadFont("assets/lexend-regular.ttf");
     boldFont = sketch.loadFont("assets/lexend-bold.ttf");
     epochTime = sketch.millis();
-}*/
+}
+
+```
 
 The preload function sets canvas dimensions, loads fonts, and initializes the epochTime.
 
