@@ -11,16 +11,24 @@ vector variable initialises the `vec2()` function through the math library
 `normRounded` just rounds up the value calculated
 direction computes the angle through `Math.atan2()` function [in radians]
 
-`dirArrow.style.transform = rotate(${direction}rad)` helps rotate the vector directly
+```
+dirArrow.style.transform = rotate(${direction}rad)
+
+```
+
+helps rotate the vector directly
 
 
 vectorPositions stores the locations of multiple vectors
 numberVectors defines the number of vectors (count)
 `vectorPositions = generateVectorsCircle(150, numberVectors)` arranges the vectors generated in a circular position
 
-`vectorPositions.forEach(pos => {
+```
+vectorPositions.forEach(pos => {
     drawVectorOrZero(sketch, vector, isZero, COL_PINK, pos, font_, "v", "0")
-})` 
+})
+
+``` 
 
 loops through each vecor positions with
 
@@ -29,7 +37,9 @@ loops through each vecor positions with
 `sketch.preload()` loads the `canvas dimensions, screen center, fonts, and epoch time` in advance
 `sketch.setup()` initiates the two vectors v1 and v2 with random angles and lengths
 
-`let p5vectorAddition = new p5(seedAddition, "vectorAddition")` joins the drawing to the html id "vectorAddition"
+```let p5vectorAddition = new p5(seedAddition, "vectorAddition")``` 
+
+joins the drawing to the html id "vectorAddition"
 
 Vector Scaling Logic:
 
@@ -79,12 +89,16 @@ sketch.preload = () => {
 The preload function sets canvas dimensions, loads fonts, and initializes the epochTime.
 
 
-`let basis = {
+```
+let basis = {
     i: vec2(1, 0),
     j: vec2(0, -1)
-}`
+}
 
-`let vectorsRadius = 200
+```
+
+```
+let vectorsRadius = 200
 let epochTime
 let normalFont
 let boldFont
@@ -97,7 +111,7 @@ let animSpeed = 0.7
 let t = 0
 let timeBetweenVectors = 1.5
 const maxVectorLen = 200;
-`
+```
 
 Variables for basis vectors, radius, fonts, vectors, and animation-related parameters are declared.
 
@@ -105,15 +119,16 @@ Variables for basis vectors, radius, fonts, vectors, and animation-related param
 
 In the span.js file
 
-`vec = vec2((Math.random()-0.5)*200, (Math.random()-0.5)*200);`
+```vec = vec2((Math.random()-0.5)*200, (Math.random()-0.5)*200);```
 
 generate a random vector
 
-`let det = basis.i.x*basis.j.y - basis.j.x*basis.i.y
+```let det = basis.i.x*basis.j.y - basis.j.x*basis.i.y
 vectorBasisCoords = vec2(
     ( basis.j.y*vec.x - basis.j.x*vec.y)/det,
     (-basis.i.y*vec.x + basis.i.x*vec.y)/det
-)`
+)
+```
 
 The determinant (det) of the basis is calculated to be used in the transformation of the vector into the new basis (vectorBasisCoords). This step involves applying the inverse of the basis matrix to the vector.
 
