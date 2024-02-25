@@ -68,12 +68,8 @@ The vectors are labeled with "î" and "ĵ" respectively.
     sketch.canvasHeigth = 570;
     sketch.screenOx = sketch.canvasWidth/2;
     sketch.screenOy = sketch.canvasHeigth/2;
-
-    // Load fonts
     normalFont = sketch.loadFont("assets/lexend-regular.ttf");
     boldFont = sketch.loadFont("assets/lexend-bold.ttf");
-
-    // Record the start time
     epochTime = sketch.millis();
 }`
 
